@@ -3,5 +3,6 @@
 </script>
 
 <main>
+  <h3>Yalla reviews</h3>
   <ReviewCarousel />
 </main>

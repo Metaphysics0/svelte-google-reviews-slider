@@ -3,6 +3,7 @@
   import Carousel from "svelte-carousel";
   import ReviewCard from "./ReviewCard.svelte";
   import { onMount } from "svelte";
+  import SkeletonLoader from "./SkeletonLoader.svelte";
 
   const { VITE_GOOGLE_PLACES_ID } = import.meta.env;
 
@@ -49,9 +50,10 @@
 </script>
 
 {#if isLoading}
-  Loading...
+  <SkeletonLoader />
 {:else}
-  <Carousel
+  <SkeletonLoader />
+  <!-- <Carousel
     particlesToShow={3}
     particlesToScroll={2}
     autoplayDuration={0}
@@ -65,5 +67,5 @@
     {#each reviews as review}
       <ReviewCard {review} />
     {/each}
-  </Carousel>
+  </Carousel> -->
 {/if}

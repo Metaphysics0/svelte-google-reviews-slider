@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@types/google.maps": "^3.54.0",
-    "svelte-carousel": "^1.0.25"
+    "svelte-carousel": "^1.0.25",
+    "vite-plugin-css-injected-by-js": "^3.3.0"
   }
 }

@@ -50,10 +50,13 @@
 </script>
 
 {#if isLoading}
-  <SkeletonLoader />
+  <div class="loader-flow">
+    <SkeletonLoader />
+    <SkeletonLoader />
+    <SkeletonLoader />
+  </div>
 {:else}
-  <SkeletonLoader />
-  <!-- <Carousel
+  <Carousel
     particlesToShow={3}
     particlesToScroll={2}
     autoplayDuration={0}
@@ -67,5 +70,11 @@
     {#each reviews as review}
       <ReviewCard {review} />
     {/each}
-  </Carousel> -->
+  </Carousel>
 {/if}
+
+<style>
+  .loader-flow {
+    display: flex;
+  }
+</style>

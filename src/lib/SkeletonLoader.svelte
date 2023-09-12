@@ -2,28 +2,36 @@
   <div class="skeleton">
     <div class="skeleton-top">
       <div class="line h8 w50" />
-      <div class="line" />
+      <div class="line w75" />
+      <div class="line w75" />
       <div class="line w75" />
     </div>
     <div class="skeleton-bottom">
       <div class="square circle" />
-      <div>
+      <div class="lines">
         <div class="line w75" />
-        <div class="rating">
-          <div class="line w25" />
-        </div>
+        <div class="line w25" />
       </div>
     </div>
   </div>
 </div>
 
 <style>
+  .lines {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
   .skeleton-top {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .skeleton-bottom {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
   }
@@ -34,8 +42,8 @@
   }
   .skeleton {
     padding: 15px;
-    max-width: 300px;
-    width: 150%;
+    /* max-width: 300px; */
+    width: 325px;
     background: #fff;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -112,8 +120,9 @@
   }
   .circle {
     border-radius: 50% !important;
-    height: 80px !important;
-    width: 80px;
+    margin-right: 15px;
+    height: 60px !important;
+    width: 60px;
   }
   @keyframes wave-lines {
     0% {

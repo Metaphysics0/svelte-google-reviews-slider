@@ -11,7 +11,25 @@
   let hasError = false;
   let reviews: google.maps.places.PlaceReview[] = [];
 
-  function initMapAndGetDetails() {
+  const maxRetries = 5;
+  const retryIntervalInMs = 1000; // 1 second
+
+  function initMapAndGetDetails(retryCount = 0) {
+    if (typeof google === "undefined" && retryCount < maxRetries) {
+      // Google Maps is not loaded, and we haven't reached the maximum retry count
+      console.log("retrying to init map", retryCount);
+
+      setTimeout(() => {
+        initMapAndGetDetails(retryCount + 1); // Retry with an incremented retry count
+      }, retryIntervalInMs);
+      return;
+    }
+
+    if (typeof google === "undefined") {
+      console.error("Google Maps could not be loaded after maximum retries.");
+      return;
+    }
+
     isLoading = true;
     const map = document.createElement("div");
     let service = new google.maps.places.PlacesService(map);
@@ -39,6 +57,7 @@
     }
 
     isLoading = false;
+
     if (result.reviews) {
       reviews = result.reviews;
     }
@@ -49,7 +68,7 @@
   });
 </script>
 
-{#if isLoading}
+{#if isLoading || reviews.length === 0}
   <div class="loader-flow">
     <SkeletonLoader />
     <SkeletonLoader />

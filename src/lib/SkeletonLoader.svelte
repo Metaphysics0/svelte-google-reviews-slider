@@ -36,6 +36,7 @@
     width: 100%;
   }
   .box {
+    margin: 0 30px;
     max-width: 300px;
     width: 100%;
     padding: 0 15px;
@@ -103,20 +104,11 @@
   .h8 {
     height: 8px !important;
   }
-  .h17 {
-    height: 17px !important;
-  }
-  .w40 {
-    width: 40% !important;
-  }
   .w50 {
     width: 50% !important;
   }
   .w75 {
     width: 75% !important;
-  }
-  .m10 {
-    margin-bottom: 10px !important;
   }
   .circle {
     border-radius: 50% !important;

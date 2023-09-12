@@ -1,7 +1,7 @@
 <script lang="ts">
   export let review: google.maps.places.PlaceReview;
 
-  const maxReviewCharacterLength = 300;
+  const maxReviewCharacterLength = 250;
   let shouldShowEllipses = review.text.length > maxReviewCharacterLength;
 </script>
 
